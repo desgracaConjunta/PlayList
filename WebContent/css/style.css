@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+
+nav {
+    float: left;
+    max-width: 200px;
+    margin: 0;
+    padding: 1em;
+}
