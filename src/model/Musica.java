@@ -2,19 +2,26 @@ package model;
 
 public class Musica {
 
-	private int musica_id, musica_duracao, album_id, musica_visualizacao, musica_ano, autor_id;
+	private int musica_id, musica_duracao, musica_album_id, musica_visualizacao, musica_ano, musica_autor_id;
 	private String musica_nome, musica_path;
+	private boolean musica_estado;
+	
+	public Musica(){
+		
+	}
 
-	public Musica(int musica_id, int musica_duracao, int album_id, int musica_visualizacao, int musica_ano,
-			int autor_id, String musica_nome, String musica_path) {
+	public Musica(int musica_id, int musica_duracao, int musica_album_id, int musica_visualizacao, int musica_ano,
+			int musica_autor_id, String musica_nome, String musica_path, boolean musica_estado) {
+		super();
 		this.musica_id = musica_id;
 		this.musica_duracao = musica_duracao;
-		this.album_id = album_id;
+		this.musica_album_id = musica_album_id;
 		this.musica_visualizacao = musica_visualizacao;
 		this.musica_ano = musica_ano;
-		this.autor_id = autor_id;
+		this.musica_autor_id = musica_autor_id;
 		this.musica_nome = musica_nome;
 		this.musica_path = musica_path;
+		this.musica_estado = musica_estado;
 	}
 
 	public int getMusica_id() {
@@ -33,12 +40,12 @@ public class Musica {
 		this.musica_duracao = musica_duracao;
 	}
 
-	public int getAlbum_id() {
-		return album_id;
+	public int getMusica_album_id() {
+		return musica_album_id;
 	}
 
-	public void setAlbum_id(int album_id) {
-		this.album_id = album_id;
+	public void setMusica_album_id(int musica_album_id) {
+		this.musica_album_id = musica_album_id;
 	}
 
 	public int getMusica_visualizacao() {
@@ -57,12 +64,12 @@ public class Musica {
 		this.musica_ano = musica_ano;
 	}
 
-	public int getAutor_id() {
-		return autor_id;
+	public int getMusica_autor_id() {
+		return musica_autor_id;
 	}
 
-	public void setAutor_id(int autor_id) {
-		this.autor_id = autor_id;
+	public void setMusica_autor_id(int musica_autor_id) {
+		this.musica_autor_id = musica_autor_id;
 	}
 
 	public String getMusica_nome() {
@@ -80,4 +87,15 @@ public class Musica {
 	public void setMusica_path(String musica_path) {
 		this.musica_path = musica_path;
 	}
+
+	public boolean isMusica_estado() {
+		return musica_estado;
+	}
+
+	public void setMusica_estado(boolean musica_estado) {
+		this.musica_estado = musica_estado;
+	}
+	
+	
+
 }

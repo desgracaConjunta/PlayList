@@ -3,4 +3,3 @@
 		<h1 class="page-header">Musicas</h1>
 	</div>
 </div>
-<jsp:include page="/addMusic.jsp" />

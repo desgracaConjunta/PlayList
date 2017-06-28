@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Logica;
+import services.Logica;
 
 /**
  * Servlet implementation class HandlerIndex
@@ -27,11 +27,13 @@ public class Handler extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("listaMusicas", Logica.arMusicas);
-		request.setAttribute("listaUsers", Logica.arUSers);
-		request.setAttribute("listaArtista", Logica.arArtistas);
-		request.setAttribute("listaPlayList", Logica.arPlayLists);
-		request.setAttribute("listaGeneros", Logica.arGeneros);
+		
+		request.setAttribute("listaMusicas",  Logica.arMusicas);
+		request.setAttribute("listaUsers",    Logica.arUSers);
+		request.setAttribute("listaArtistas", Logica.arArtitas);
+		request.setAttribute("listaPlayLists",Logica.arPlayLists);
+		request.setAttribute("listaGeneros",  Logica.arGeneros);
+		request.setAttribute("listaFuncoes",  Logica.arFuncoes);
 		
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}

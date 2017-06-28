@@ -1,28 +1,48 @@
 package model;
 
-public class Artista extends Pessoa{
+public class Artista{
 	
-	private String artista_nome_banda;
-	
+	private int artista_id;
+	private String artista_nome;
+	private boolean artista_enabled;
+
 	public Artista(){
 		
 	}
-	
-	public Artista(int pessoa_id, int pessoa_tipo,String pessoa_nome, String pessoa_email, String pessoa_pass,String artista_nome_banda) {
-		super(pessoa_id,pessoa_tipo,pessoa_nome,pessoa_email,pessoa_pass);
-		this.artista_nome_banda = artista_nome_banda;
-	}
-	
-	public String getArtista_nome_banda() {
-		return artista_nome_banda;
+
+	public Artista(int artista_id, String artista_nome, boolean enabled) {
+		super();
+		this.artista_id = artista_id;
+		this.artista_nome = artista_nome;
+		this.artista_enabled = enabled;
 	}
 
-	public void setArtista_nome_banda(String artista_nome_banda) {
-		this.artista_nome_banda = artista_nome_banda;
+	public int getArtista_id() {
+		return artista_id;
 	}
 
-	
+	public void setArtista_id(int artista_id) {
+		this.artista_id = artista_id;
+	}
+
+	public String getArtista_nome() {
+		return artista_nome;
+	}
+
+	public void setArtista_nome(String artista_nome) {
+		this.artista_nome = artista_nome;
+	}
+
+	public boolean isEnabled() {
+		return artista_enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.artista_enabled = enabled;
+	}
 	
 	
 
+	
+	
 }

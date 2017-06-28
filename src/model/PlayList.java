@@ -3,19 +3,21 @@ package model;
 public class PlayList {
 
 	private int playlist_id,playlist_qta_musica;
-	private String playlist_nome;
-	private String playlist_data_criacao;
+	private String playlist_nome,playlist_data;
+	private boolean playlist_estado;
 	
 	public PlayList(){
 		
 	}
 
-	public PlayList(int playlist_id, int playlist_qta_musica, String playlist_nome, String playlist_data_criacao) {
+	public PlayList(int playlist_id, int playlist_qta_musica, String playlist_nome, String playlist_data,
+			boolean playlist_estado) {
 		super();
 		this.playlist_id = playlist_id;
 		this.playlist_qta_musica = playlist_qta_musica;
 		this.playlist_nome = playlist_nome;
-		this.playlist_data_criacao = playlist_data_criacao;
+		this.playlist_data = playlist_data;
+		this.playlist_estado = playlist_estado;
 	}
 
 	public int getPlaylist_id() {
@@ -42,13 +44,22 @@ public class PlayList {
 		this.playlist_nome = playlist_nome;
 	}
 
-	public String getPlaylist_data_criacao() {
-		return playlist_data_criacao;
+	public String getPlaylist_data() {
+		return playlist_data;
 	}
 
-	public void setPlaylist_data_criacao(String playlist_data_criacao) {
-		this.playlist_data_criacao = playlist_data_criacao;
+	public void setPlaylist_data(String playlist_data) {
+		this.playlist_data = playlist_data;
+	}
+
+	public boolean isPlaylist_estado() {
+		return playlist_estado;
+	}
+
+	public void setPlaylist_estado(boolean playlist_estado) {
+		this.playlist_estado = playlist_estado;
 	}
 	
 	
+
 }

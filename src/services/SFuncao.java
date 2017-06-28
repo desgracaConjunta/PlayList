@@ -3,12 +3,12 @@ package services;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SArtista implements Logica{
+public class SFuncao implements Logica{
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		
-		return "/index.jsp";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

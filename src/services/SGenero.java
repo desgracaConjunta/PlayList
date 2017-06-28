@@ -3,8 +3,6 @@ package services;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Logica;
-
 public class SGenero implements Logica {
 
 	@Override

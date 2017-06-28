@@ -1,0 +1,42 @@
+package model;
+
+public class Funcao {
+	
+	private int funcao_id;
+	private String funcao_descricao;
+	private boolean funcao_enabled;
+	
+	public Funcao(int funcao_id, String funcao_descricao, boolean funcao_enabled) {
+		super();
+		this.funcao_id = funcao_id;
+		this.funcao_descricao = funcao_descricao;
+		this.funcao_enabled = funcao_enabled;
+	}
+
+	public int getFuncao_id() {
+		return funcao_id;
+	}
+
+	public void setFuncao_id(int funcao_id) {
+		this.funcao_id = funcao_id;
+	}
+
+	public String getFuncao_descricao() {
+		return funcao_descricao;
+	}
+
+	public void setFuncao_descricao(String funcao_descricao) {
+		this.funcao_descricao = funcao_descricao;
+	}
+
+	public boolean isFuncao_enabled() {
+		return funcao_enabled;
+	}
+
+	public void setFuncao_enabled(boolean funcao_enabled) {
+		this.funcao_enabled = funcao_enabled;
+	}
+	
+	
+
+}
