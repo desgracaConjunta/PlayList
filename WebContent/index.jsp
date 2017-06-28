@@ -13,8 +13,8 @@
 <body>
 	
 		
-<jsp:include page="/login.jsp"/>
-<jsp:include page="/nav.jsp"/>
+<jsp:include page="paginas/login.jsp"/>
+<jsp:include page="paginas/nav.jsp"/>
 			
 	
 
