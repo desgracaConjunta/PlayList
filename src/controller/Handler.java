@@ -34,6 +34,7 @@ public class Handler extends HttpServlet {
 		request.setAttribute("listaPlayLists",Logica.arPlayLists);
 		request.setAttribute("listaGeneros",  Logica.arGeneros);
 		request.setAttribute("listaFuncoes",  Logica.arFuncoes);
+		request.setAttribute("listaAlbuns",	  Logica.arAlbuns);
 		
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
