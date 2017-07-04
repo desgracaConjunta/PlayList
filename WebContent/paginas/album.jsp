@@ -4,7 +4,8 @@
 
 <div class="container-fluid">
 	<ul class="nav nav-pills">
-		<li role="presentation" class="active"><a href="Handler?pag=b">Album</a></li>
+		<li role="presentation" class="active"><a
+			href="Handler?pag=album">Album</a></li>
 		<li role="presentation"><a href="Handler?pag=album&b=add">Adicionar
 				Album</a></li>
 		<li role="presentation"><a href="Handler?pag=album&b=edit">Editar
@@ -50,10 +51,11 @@
 								ArrayList arAlbuns = (ArrayList) request.getAttribute("listaAlbuns");
 								for (int i = 0; i < arAlbuns.size(); i++) {
 									Album user = (Album) arAlbuns.get(i);
-									out.append("<tr><td>"+ user.getAlbum_id() +"</td><td>"+ user.getAlbum_nome() +"</td><td>"+ user.getAlbum_enabled() +"</td></tr>");
+									out.append("<tr><td>" + user.getAlbum_id() + "</td><td>" + user.getAlbum_nome() + "</td><td>"
+											+ user.getAlbum_enabled() + "</td></tr>");
 
 								}
-						}
+							}
 					%>
 				</tbody>
 			</table>

@@ -20,18 +20,34 @@ public class SAlbum implements Logica{
 		if(Logica.arAlbuns.get(id).getAlbum_id()==id) Logica.arAlbuns.remove(id);
 	}
 
+	public Album procAlbum(int idAlb) {
+		Album alb = new Album();
+		for(Album a:Logica.arAlbuns) {
+			if(idAlb == a.getAlbum_id()) {
+				alb = a;
+			}
+		}
+		
+		return alb;
+	}
+	
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
-		if(req.getAttribute("acao").equals("addAlbum")) {
+		if(req.getParameter("acao").equals("addAlbum")) {
 			addAlbum(req.getParameter("add_nome_album"));
 		}else if(req.getAttribute("acao").equals("editAlbum")) {
 			editAlbum(Integer.parseInt(req.getParameter("id_Album")),
 					  req.getParameter("edit_nome_Album"),
 					  Integer.parseInt(req.getParameter("edit_estado_Album")));
+		}else if(req.getParameter("acao").equals("delAbum")) {
+			
 		}
 		
-		return null;
+		req.setAttribute("listaAlbuns", Logica.arAlbuns);
+		
+		
+		return "/index.jsp?pag=album";
 	}
 
 }

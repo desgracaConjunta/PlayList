@@ -24,7 +24,7 @@
 						</select>
 					</div>
 				</div>
-				<div id="form2" style="display: none">
+				<div id="formAlb" style="display: none">
 					<div class="form-group">
 						<label>Nome do Album</label>
 						<input type="text" class="form-control" name="edit_Album" id="edit_Album">
@@ -48,52 +48,18 @@
 
 <<script type="text/javascript">
 	function edit(field){
-		window.location = "Handler?pag=album&b=";
+		if(field.value != ''){
+			window.location = "Handler?pag=album&b=edit&id"+ field.value;	
+		}
 	}
+	$( document ).ready(function(){
+		<% if(request.getParameter("id") != null){
+			Album alb = (Album) Album.get(Integer.parseInt(request.getParameter("id")));%>
+			$("#formAlb").css("display","block");
+		<% out.append("$('#edit_Album').attr('value','" + alb.getAlbum_nome() + "');");
+		}%>
+
+	});
 
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="form1">
-	<div class="form-group">
-		<label>Tema a editar:</label> <select class="form-control"
-			name="listaTemas" id="listaTemas" onchange="edit(this)">
-			<option value="sem">Sem precedência</option>
-			<%
-				ArrayList temas = (ArrayList) request.getAttribute("arrayTemas");
-
-				for (int i = 0; i < temas.size(); i++) {
-					Tema tema = (Tema) temas.get(i);
-					out.append("<option value='" + i + "'>" + tema.getNomeTema() + "</option>");
-				}
-			%>
-		</select>
-	</div>
-</div>

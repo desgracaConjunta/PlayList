@@ -12,7 +12,7 @@ import services.Logica;
 /**
  * Servlet implementation class HandlerIndex
  */
-@WebServlet("/HandlerIndex")
+@WebServlet("/Handler")
 public class Handler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

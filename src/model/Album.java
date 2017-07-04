@@ -6,6 +6,9 @@ public class Album {
 	private String album_nome;
 	private int album_enabled;
 	
+	public Album () {
+		
+	}
 	
 	public Album(int album_id, String album_nome,int enabled) {
 		super();
