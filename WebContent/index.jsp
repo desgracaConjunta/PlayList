@@ -26,26 +26,22 @@
 		//} //else {
 			if (request.getParameter("pag") != null) {
 				if (request.getParameter("pag").equals("playlist")) {
-				    %>  <jsp:include page="/paginas/playlist.jsp" /> <%
+				    %>  <jsp:include page="./paginas/playlist.jsp" /> <%
 				} else if (request.getParameter("pag").equals("users")) {
-				    %>  <jsp:include page="/paginas/user.jsp" /> <%
+				    %>  <jsp:include page="./paginas/user.jsp" /> <%
 				} else if (request.getParameter("pag").equals("musicas")) {
-					%>  <jsp:include page="/paginas/musica.jsp" /><% 
+					%>  <jsp:include page="./paginas/musica.jsp" /><% 
 				} else if (request.getParameter("pag").equals("album")){
-					%>  <jsp:include page="/paginas/album.jsp" /><%
+					%>  <jsp:include page="./paginas/album.jsp" /><%
 				} else if (request.getParameter("pag").equals("genero")){
-					%>  <jsp:include page="/paginas/genero.jsp" /><%
+					%>  <jsp:include page="./paginas/genero.jsp" /><%
 				} else if (request.getParameter("pag").equals("artista")){
-					%>  <jsp:include page="/paginas/artista.jsp" /><% 
+					%>  <jsp:include page="./paginas/artista.jsp" /><% 
 				} else if (request.getParameter("pag").equals("autor")){
-					%>  <jsp:include page="/paginas/autor.jsp" /><%
+					%>  <jsp:include page="./paginas/autor.jsp" /><%
 				} else if (request.getParameter("pag").equals("funcao")){
-					%>  <jsp:include page="/paginas/funcao.jsp"/><%
+					%>  <jsp:include page="./paginas/funcao.jsp"/><%
 				}
-			} else {
-				%>
-				<jsp:include page="/index.jsp" />
-				<%
 			}
 		//}
 	%>
