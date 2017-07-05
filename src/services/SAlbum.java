@@ -8,7 +8,7 @@ import model.Album;
 public class SAlbum implements Logica{
 	
 	public void addAlbum(String nome) {
-		Logica.arAlbuns.add(new Album(Logica.arAlbuns.size(),nome,1));
+		Logica.arAlbuns.add(new Album(Logica.arAlbuns.size(),nome));
 	}
 	
 	public void editAlbum(int id,String nome) {
@@ -16,7 +16,9 @@ public class SAlbum implements Logica{
 	}
 	
 	public void delAlbum(int id) {
-		if(Logica.arAlbuns.get(id).getAlbum_id()==id) Logica.arAlbuns.remove(id);
+		for(int i=0; i<Logica.arAlbuns.size();i++) {
+			if(Logica.arAlbuns.get(i).getAlbum_id()==id) Logica.arAlbuns.remove(i);
+		}
 	}
 
 	public Album procAlbum(int idAlb) {
@@ -34,16 +36,13 @@ public class SAlbum implements Logica{
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
 		if(req.getParameter("acao").equals("addAlbum")) {
-			
 			addAlbum(req.getParameter("add_nome_album"));
-			
 		}else if(req.getParameter("acao").equals("editT")) {
-			
-			System.out.println(Integer.parseInt(req.getParameter("listaAlbum")));
 			editAlbum(Integer.parseInt(req.getParameter("listaAlbum")),
 					  req.getParameter("editAlbum"));
-		}else if(req.getParameter("acao").equals("delAbum")) {
-			
+		}else if(req.getParameter("acao").equals("delAlbum")) {
+
+			delAlbum(Integer.parseInt(req.getParameter("listaAlb")));
 		}
 		
 		req.setAttribute("listaAlbuns", Logica.arAlbuns);

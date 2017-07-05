@@ -13,17 +13,17 @@
 <body>
 	<%@ include file="/paginas/nav.jsp"%>
 	<%
-		//if (session.getAttribute("log") == null) {
+		if (session.getAttribute("log") == null) {
 			%>
-		<!--<jsp:include page="/paginas/login.jsp" />-->
+				<jsp:include page="/paginas/login.jsp" />
 			<%
-		//} else if(request.getSession().getAttribute("log") == "0"){
+		} else if(request.getSession().getAttribute("log") == "0"){
 			%>
-			<!--<jsp:include page="/paginas/login.jsp">
+				<jsp:include page="/paginas/login.jsp">
 		        <jsp:param name="log" value="0"/>
-		    </jsp:include>-->
+		    </jsp:include>
 			<%
-		//} //else {
+		} else {
 			if (request.getParameter("pag") != null) {
 				if (request.getParameter("pag").equals("playlist")) {
 				    %>  <jsp:include page="./paginas/playlist.jsp" /> <%
@@ -42,8 +42,10 @@
 				} else if (request.getParameter("pag").equals("funcao")){
 					%>  <jsp:include page="./paginas/funcao.jsp"/><%
 				}
+			}else{
+				%> <jsp:include page="/index.jsp"></jsp:include><% 
 			}
-		//}
+		}
 	%>
 </body>
 </html>

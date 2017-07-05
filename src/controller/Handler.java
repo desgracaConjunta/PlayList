@@ -6,8 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import services.Logica;
+import sqlServer.PageOnLoad;
 
 /**
  * Servlet implementation class HandlerIndex
@@ -15,12 +17,14 @@ import services.Logica;
 @WebServlet("/Handler")
 public class Handler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	PageOnLoad pageOnLoad;
+
     /**
      * @see HttpServlet#HttpServlet()
      */ 
     public Handler() {
         super();
+        pageOnLoad = new PageOnLoad();
     }
 
 	/**
@@ -28,6 +32,12 @@ public class Handler extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession sessao = request.getSession(true);
+		
+		if(sessao.getAttribute("user_id") == null){
+			pageOnLoad.carregarInformacao();
+		}
+
 		request.setAttribute("listaMusicas",  Logica.arMusicas);
 		request.setAttribute("listaUsers",    Logica.arUSers);
 		request.setAttribute("listaArtistas", Logica.arArtitas);
@@ -36,7 +46,9 @@ public class Handler extends HttpServlet {
 		request.setAttribute("listaFuncoes",  Logica.arFuncoes);
 		request.setAttribute("listaAlbuns",	  Logica.arAlbuns);
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
+	
+
 	}
 
 	/**
